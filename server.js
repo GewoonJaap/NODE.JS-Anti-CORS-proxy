@@ -20,6 +20,7 @@ app.all('*', function (req, res, next) {
         res.send();
     } else {
         var targetURL = req.header('Target-URL');
+      //Check for target URL and if target url is whitelisted
         if (!targetURL || targetURL !='https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game') {
           console.log('There is no Target-Endpoint header in the request')
             res.send(500, { error: 'There is no Target-Endpoint header in the request' });
